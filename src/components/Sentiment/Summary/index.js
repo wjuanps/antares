@@ -3,15 +3,15 @@ import React from "react";
 // import { Container } from './styles';
 
 const Summary = () => (
-  <section class="features-icons" style={{ backgroundColor: "#ffffff" }}>
-    <div class="container">
-      <div class="row data hidden">
-        <table class="table table-hover table-responsive">
+  <section className="features-icons" style={{ backgroundColor: "#ffffff" }}>
+    <div className="container">
+      <div className="row data">
+        <table className="table table-hover table-responsive">
           <thead>
             <tr>
-              <th style={{ borderTop: "none" }} colspan="2">
-                <h3 class="text-info">
-                  <i class="fa fa-bar-chart"></i>&nbsp;Resumo da análise
+              <th style={{ borderTop: "none" }} colSpan={2}>
+                <h3 className="text-info">
+                  <i className="fa fa-bar-chart"></i>&nbsp;Resumo da análise
                 </h3>
               </th>
             </tr>
@@ -63,7 +63,7 @@ const Summary = () => (
         </table>
       </div>
 
-      <div class="row"></div>
+      <div className="row"></div>
     </div>
   </section>
 );

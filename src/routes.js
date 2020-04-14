@@ -13,7 +13,7 @@ const Routes = () => (
     <Route path="/terms" component={Terms} />
     <Route path="/privacy" component={Privacy} />
     <Route path="/about" component={About} />
-    <Route path="/sentiment" component={Sentiment} />
+    <Route path="/sentiment/:text" component={Sentiment} />
   </Switch>
 );
 
