@@ -1,8 +1,28 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 
-// import { Container } from './styles';
+import utils from "../../services/utils";
 
-const Header = () => {
+const Header = ({ text }) => {
+  const input = useRef(null);
+
+  useEffect(() => {
+    input.current.value = text.replace(/\-+/g, " ");
+  }, [input]);
+
+  const handleSubmit = () => {
+    let { value } = input.current;
+    if (!!value) {
+      value = utils.slugify(value);
+      window.open(`/sentiment-analysis/${value}`, "_self");
+    }
+  };
+
+  const handleKeyUp = (event) => {
+    if (event.keyCode === 13) {
+      handleSubmit();
+    }
+  };
+
   return (
     <header className="masthead text-white text-center">
       <div className="overlay"></div>
@@ -15,27 +35,27 @@ const Header = () => {
             </h1>
           </div>
           <div className="col-md-10 col-lg-8 col-xl-7 mx-auto">
-            <form method="get" action="/sentiment-analysis">
-              <div className="form-row">
-                <div className="col-12 col-md-9 mb-2 mb-md-0">
-                  <input
-                    name="q"
-                    type="text"
-                    className="form-control form-control-lg"
-                    placeholder="Pesquisar por..."
-                    required
-                  />
-                </div>
-                <div className="col-12 col-md-3">
-                  <button
-                    type="submit"
-                    className="btn btn-block btn-lg btn-primary"
-                  >
-                    Buscar
-                  </button>
-                </div>
+            <div className="form-row">
+              <div className="col-12 col-md-9 mb-2 mb-md-0">
+                <input
+                  ref={input}
+                  onKeyUp={handleKeyUp}
+                  type="text"
+                  className="form-control form-control-lg"
+                  placeholder="Pesquisar por..."
+                  required
+                />
               </div>
-            </form>
+              <div className="col-12 col-md-3">
+                <button
+                  type="button"
+                  onClick={handleSubmit}
+                  className="btn btn-block btn-lg btn-primary"
+                >
+                  Buscar
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
