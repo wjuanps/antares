@@ -1,20 +1,19 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import Logo from "../../assets/img/logo.png";
-
-// import { Container } from './styles';
 
 const Nav = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light static-top">
       <div className="container">
-        <a className="navbar-brand" href="/">
+        <Link className="navbar-brand" to="/">
           <img className="img-fluid" src={Logo} alt="Logo Antares" />
-        </a>
+        </Link>
 
-        <a className="btn btn-primary" href="#">
+        <Link className="btn btn-primary" to="">
           Sign In
-        </a>
+        </Link>
       </div>
     </nav>
   );

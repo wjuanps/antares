@@ -1,11 +1,14 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import Header from "../Header";
+
+import utils from "../../services/utils";
 
 const Home = () => {
   return (
     <>
-      <Header />
+      <Header text="" />
       <section
         className="features-icons text-center"
         style={{ backgroundColor: "#ffffff" }}
@@ -20,9 +23,14 @@ const Home = () => {
             <div className="col-lg-4">
               <div className="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
                 <div className="features-icons-icon d-flex">
-                  <a className=" m-auto text-primary" href="">
+                  <Link
+                    className=" m-auto text-primary"
+                    to={`/sentiment-analysis/${utils.slugify(
+                      "Samsung note 10 plus"
+                    )}`}
+                  >
                     <i className="fa fa-external-link"></i>
-                  </a>
+                  </Link>
                 </div>
                 <h3>Samsung note 10 plus</h3>
                 <p className="lead mb-0">55 consultas nas últimas 4 semanas</p>
@@ -31,9 +39,12 @@ const Home = () => {
             <div className="col-lg-4">
               <div className="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
                 <div className="features-icons-icon d-flex">
-                  <a className=" m-auto text-primary" href="">
+                  <Link
+                    className=" m-auto text-primary"
+                    to={`/sentiment-analysis/${utils.slugify("Mi note 10")}`}
+                  >
                     <i className="fa fa-external-link"></i>
-                  </a>
+                  </Link>
                 </div>
                 <h3>Mi note 10</h3>
                 <p className="lead mb-0">43 consultas nas últimas 4 semanas</p>
@@ -42,9 +53,14 @@ const Home = () => {
             <div className="col-lg-4">
               <div className="features-icons-item mx-auto mb-0 mb-lg-3">
                 <div className="features-icons-icon d-flex">
-                  <a className=" m-auto text-primary" href="">
+                  <Link
+                    className=" m-auto text-primary"
+                    to={`/sentiment-analysis/${utils.slugify(
+                      "Iphone 11 pro max"
+                    )}`}
+                  >
                     <i className="fa fa-external-link"></i>
-                  </a>
+                  </Link>
                 </div>
                 <h3>Iphone 11 pro max</h3>
                 <p className="lead mb-0">41 consultas nas últimas 4 semanas</p>
