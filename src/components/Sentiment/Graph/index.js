@@ -41,8 +41,8 @@ const Graph = ({ data }) => {
         data.result.percentPositive.toFixed(2),
         data.result.percentNegative.toFixed(2),
       ],
-      backgroundColor: ["rgba(54, 162, 235, 0.8)", "rgba(255, 99, 132, 0.8)"],
-      borderColor: ["rgba(54, 162, 235, 1)", "rgba(255, 99, 132, 1)"],
+      backgroundColor: ["rgba(75, 192, 192, 0.8)", "rgba(255, 99, 132, 0.8)"],
+      borderColor: ["rgba(75, 192, 192, 1)", "rgba(255, 99, 132, 1)"],
       borderWidth: 1,
     });
   }, [bar, pie]);
@@ -51,7 +51,7 @@ const Graph = ({ data }) => {
     <section className="features-icons bg-light text-center">
       <div className="container">
         <h2 className="text-info mb-5">
-          Análise de Sentimentos para '{data.text}'
+          Análise de Sentimentos para '{data.text.replace(/\-+/g, " ")}'
         </h2>
 
         <div className="row data hidden">

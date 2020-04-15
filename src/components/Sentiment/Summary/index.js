@@ -1,8 +1,6 @@
 import React from "react";
 
-// import { Container } from './styles';
-
-const Summary = () => (
+const Summary = ({ data }) => (
   <section className="features-icons" style={{ backgroundColor: "#ffffff" }}>
     <div className="container">
       <div className="row data">
@@ -19,51 +17,31 @@ const Summary = () => (
           <tbody>
             <tr>
               <td>Sentimento predominante</td>
-              <td>
-                <span id="sentimentText"></span>
-              </td>
-            </tr>
-            <tr>
-              <td>Pontuação sentimento</td>
-              <td>
-                <span id="sentimentNumber"></span>
-              </td>
+              <td>{["Negativo", "Positivo"][data.result.sentiment]}</td>
             </tr>
             <tr>
               <td>Pontuação Positivas</td>
-              <td>
-                <span id="sentimentPositive"></span>
-              </td>
+              <td>{data.result.positive}</td>
             </tr>
             <tr>
               <td>Pontuação Negativas</td>
-              <td>
-                <span id="sentimentNegative"></span>
-              </td>
+              <td>{data.result.negative}</td>
             </tr>
             <tr>
               <td>Porcentagem Positivas</td>
-              <td>
-                <span id="percentPositive"></span>
-              </td>
+              <td>{data.result.percentPositive.toFixed(2)}%</td>
             </tr>
             <tr>
               <td>Porcentagem Negativas</td>
-              <td>
-                <span id="percentNegative"></span>
-              </td>
+              <td>{data.result.percentNegative.toFixed(2)}%</td>
             </tr>
             <tr>
               <td>Total de Tweets análisados</td>
-              <td>
-                <span id="total"></span>
-              </td>
+              <td>{data.total}</td>
             </tr>
           </tbody>
         </table>
       </div>
-
-      <div className="row"></div>
     </div>
   </section>
 );

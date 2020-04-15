@@ -1,7 +1,5 @@
 import React from "react";
 
-// import { Container } from './styles';
-
 const Table = ({ data }) => {
   return (
     <section className="features-icons bg-light">
@@ -17,13 +15,50 @@ const Table = ({ data }) => {
                 </th>
               </tr>
             </thead>
-            <tbody></tbody>
+            <tbody>
+              {data.tweets.map((tweet) => (
+                <Tweet key={tweet.id} tweet={tweet} />
+              ))}
+            </tbody>
           </table>
         </div>
-
-        <div className="row"></div>
       </div>
     </section>
+  );
+};
+
+const Tweet = ({ tweet }) => {
+  return (
+    <tr>
+      <td>
+        <a
+          href={`https://twitter.com/${tweet.userProfile}`}
+          className="btn btn-link"
+          target="_blank"
+        >
+          <img className="rounded-circle" src={tweet.profileImage} alt="img" />
+        </a>
+      </td>
+      <td>
+        <a
+          href={`https://twitter.com/${tweet.userProfile}`}
+          className="btn btn-link text-muted"
+          target="_blank"
+        >
+          {tweet.userName}
+        </a>
+      </td>
+      <td>
+        {tweet.text}
+        <a
+          href={`https://twitter.com/i/web/status/${tweet.id}`}
+          className="btn btn-link"
+          target="_blank"
+        >
+          Ver original
+        </a>
+      </td>
+    </tr>
   );
 };
 

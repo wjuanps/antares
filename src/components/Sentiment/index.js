@@ -29,7 +29,8 @@ function Sentiment() {
 
   return (
     <>
-      <Header />
+      <Header text={text} />
+
       {isLoading ? <Loader /> : <Graph data={data} />}
       {isLoading ? <Loader /> : <Summary data={data} />}
       {isLoading ? <Loader /> : <Table data={data} />}
