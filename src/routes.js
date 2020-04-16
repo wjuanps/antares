@@ -6,6 +6,7 @@ import Terms from "./components/Terms";
 import Privacy from "./components/Privacy";
 import About from "./components/About";
 import Sentiment from "./components/Sentiment";
+import Compare from "./components/Sentiment/Compare";
 import NotFound from "./components/NotFound";
 
 const Routes = () => (
@@ -15,6 +16,7 @@ const Routes = () => (
     <Route path="/privacy" exact component={Privacy} />
     <Route path="/about" exact component={About} />
     <Route path="/sentiment-analysis/:text" exact component={Sentiment} />
+    <Route path="/compare" exact component={Compare} />
     <Route path="/*" component={NotFound} />
   </Switch>
 );

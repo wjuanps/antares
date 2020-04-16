@@ -11,8 +11,8 @@ const Nav = () => {
           <img className="img-fluid" src={Logo} alt="Logo Antares" />
         </Link>
 
-        <Link className="btn btn-primary" to="">
-          Sign In
+        <Link className="btn btn-primary" to="/compare">
+          Comparador
         </Link>
       </div>
     </nav>
