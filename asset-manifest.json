@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/antares/static/css/main.9ee2d0a3.chunk.css",
-    "main.js": "/antares/static/js/main.16134ead.chunk.js",
-    "main.js.map": "/antares/static/js/main.16134ead.chunk.js.map",
+    "main.js": "/antares/static/js/main.e6e74ece.chunk.js",
+    "main.js.map": "/antares/static/js/main.e6e74ece.chunk.js.map",
     "runtime-main.js": "/antares/static/js/runtime-main.5de750d2.js",
     "runtime-main.js.map": "/antares/static/js/runtime-main.5de750d2.js.map",
     "static/css/2.a8683939.chunk.css": "/antares/static/css/2.a8683939.chunk.css",
     "static/js/2.46652ec2.chunk.js": "/antares/static/js/2.46652ec2.chunk.js",
     "static/js/2.46652ec2.chunk.js.map": "/antares/static/js/2.46652ec2.chunk.js.map",
     "index.html": "/antares/index.html",
-    "precache-manifest.056163818e636c2715c286d61ccd404e.js": "/antares/precache-manifest.056163818e636c2715c286d61ccd404e.js",
+    "precache-manifest.7ee6b997f34f91cfeb3a6ff9f73e54e4.js": "/antares/precache-manifest.7ee6b997f34f91cfeb3a6ff9f73e54e4.js",
     "service-worker.js": "/antares/service-worker.js",
     "static/css/2.a8683939.chunk.css.map": "/antares/static/css/2.a8683939.chunk.css.map",
     "static/css/main.9ee2d0a3.chunk.css.map": "/antares/static/css/main.9ee2d0a3.chunk.css.map",
@@ -23,6 +23,6 @@
     "static/css/2.a8683939.chunk.css",
     "static/js/2.46652ec2.chunk.js",
     "static/css/main.9ee2d0a3.chunk.css",
-    "static/js/main.16134ead.chunk.js"
+    "static/js/main.e6e74ece.chunk.js"
   ]
 }
