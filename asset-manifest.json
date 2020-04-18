@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/antares/static/css/main.9ee2d0a3.chunk.css",
+    "main.js": "/antares/static/js/main.2d45212d.chunk.js",
+    "main.js.map": "/antares/static/js/main.2d45212d.chunk.js.map",
+    "runtime-main.js": "/antares/static/js/runtime-main.5de750d2.js",
+    "runtime-main.js.map": "/antares/static/js/runtime-main.5de750d2.js.map",
+    "static/css/2.a8683939.chunk.css": "/antares/static/css/2.a8683939.chunk.css",
+    "static/js/2.46652ec2.chunk.js": "/antares/static/js/2.46652ec2.chunk.js",
+    "static/js/2.46652ec2.chunk.js.map": "/antares/static/js/2.46652ec2.chunk.js.map",
+    "index.html": "/antares/index.html",
+    "precache-manifest.fcb72ca498aecf2d84dba0e38202fc20.js": "/antares/precache-manifest.fcb72ca498aecf2d84dba0e38202fc20.js",
+    "service-worker.js": "/antares/service-worker.js",
+    "static/css/2.a8683939.chunk.css.map": "/antares/static/css/2.a8683939.chunk.css.map",
+    "static/css/main.9ee2d0a3.chunk.css.map": "/antares/static/css/main.9ee2d0a3.chunk.css.map",
+    "static/js/2.46652ec2.chunk.js.LICENSE.txt": "/antares/static/js/2.46652ec2.chunk.js.LICENSE.txt",
+    "static/media/simple-line-icons.css": "/antares/static/media/Simple-Line-Icons.f33df365.eot",
+    "static/media/landing-page.css": "/antares/static/media/bg-technology.e1a8b9bc.png",
+    "static/media/font-awesome.css": "/antares/static/media/fontawesome-webfont.fee66e71.woff"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.5de750d2.js",
+    "static/css/2.a8683939.chunk.css",
+    "static/js/2.46652ec2.chunk.js",
+    "static/css/main.9ee2d0a3.chunk.css",
+    "static/js/main.2d45212d.chunk.js"
+  ]
+}
