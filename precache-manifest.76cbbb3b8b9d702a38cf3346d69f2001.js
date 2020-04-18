@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "ded4ca6463d883d569dc948252d0909b",
+    "revision": "01d4c86e28a2a02bb04b72f6baa53438",
     "url": "/antares/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/antares/static/css/2.a8683939.chunk.css"
   },
   {
-    "revision": "87a4921db48f3271fc42",
+    "revision": "637fa4f3eaafed4d6efa",
     "url": "/antares/static/css/main.9ee2d0a3.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/antares/static/js/2.db379534.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "87a4921db48f3271fc42",
-    "url": "/antares/static/js/main.aa21329e.chunk.js"
+    "revision": "637fa4f3eaafed4d6efa",
+    "url": "/antares/static/js/main.2d957771.chunk.js"
   },
   {
     "revision": "20b4b6b8569c47c65f3d",
