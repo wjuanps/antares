@@ -1,4 +1,5 @@
 import React, { useRef, useEffect } from "react";
+import { useHistory } from "react-router-dom";
 
 import utils from "../../services/utils";
 
@@ -28,6 +29,8 @@ const Header = ({ text, compare = false }) => {
 const SentimentButton = ({ text }) => {
   const input = useRef(null);
 
+  const history = useHistory();
+
   useEffect(() => {
     input.current.value = text.replace(/\-+/g, " ");
   }, [input]);
@@ -36,7 +39,7 @@ const SentimentButton = ({ text }) => {
     let { value } = input.current;
     if (!!value) {
       value = utils.slugify(value);
-      window.open(`/sentiment-analysis/${value}`, "_self");
+      history.push(`/antares/sentiment-analysis/${value}`);
     }
   };
 

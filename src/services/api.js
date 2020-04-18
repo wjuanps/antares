@@ -1,9 +1,9 @@
 import axios from "axios";
 
-const baseURL = "http://localhost:8000/api/";
+const baseURL = "http://juansoares.ueuo.com/app/public/api/";
 
 const api = axios.create({
-  baseURL
+  baseURL,
 });
 
 export default api;

@@ -1,7 +1,5 @@
 import React from "react";
 
-// import { Container } from './styles';
-
 const Privacy = () => (
   <section class="features-icons">
     <div class="container">

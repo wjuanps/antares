@@ -1,5 +1,5 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useRef } from "react";
+import { Link, useHistory } from "react-router-dom";
 
 import Header from "../Header";
 
@@ -25,7 +25,7 @@ const Home = () => {
                 <div className="features-icons-icon d-flex">
                   <Link
                     className=" m-auto text-primary"
-                    to={`/sentiment-analysis/${utils.slugify(
+                    to={`/antares/sentiment-analysis/${utils.slugify(
                       "Samsung note 10 plus"
                     )}`}
                   >
@@ -41,7 +41,9 @@ const Home = () => {
                 <div className="features-icons-icon d-flex">
                   <Link
                     className=" m-auto text-primary"
-                    to={`/sentiment-analysis/${utils.slugify("Mi note 10")}`}
+                    to={`/antares/sentiment-analysis/${utils.slugify(
+                      "Mi note 10"
+                    )}`}
                   >
                     <i className="fa fa-external-link"></i>
                   </Link>
@@ -55,7 +57,7 @@ const Home = () => {
                 <div className="features-icons-icon d-flex">
                   <Link
                     className=" m-auto text-primary"
-                    to={`/sentiment-analysis/${utils.slugify(
+                    to={`/antares/sentiment-analysis/${utils.slugify(
                       "Iphone 11 pro max"
                     )}`}
                   >
@@ -120,40 +122,62 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="call-to-action text-white text-center">
-        <div className="overlay"></div>
-        <div className="container">
-          <div className="row">
-            <div className="col-xl-9 mx-auto">
-              <h2 className="mb-4">Pronto para começar? Faça sua busca!</h2>
-            </div>
-            <div className="col-md-10 col-lg-8 col-xl-7 mx-auto">
-              <form method="get" action="/sentiment-analysis">
-                <div className="form-row">
-                  <div className="col-12 col-md-9 mb-2 mb-md-0">
-                    <input
-                      name="q"
-                      type="text"
-                      className="form-control form-control-lg"
-                      placeholder="Pesquisar por..."
-                      required
-                    />
-                  </div>
-                  <div className="col-12 col-md-3">
-                    <button
-                      type="submit"
-                      className="btn btn-block btn-lg btn-primary"
-                    >
-                      Buscar
-                    </button>
-                  </div>
-                </div>
-              </form>
+      <Footer />
+    </>
+  );
+};
+
+const Footer = () => {
+  const history = useHistory();
+  const input = useRef(null);
+
+  const handleSubmit = () => {
+    let { value } = input.current;
+    if (!!value) {
+      value = utils.slugify(value);
+      history.push(`/antares/sentiment-analysis/${value}`);
+    }
+  };
+
+  const handleKeyUp = (event) => {
+    if (event.keyCode === 13) {
+      handleSubmit();
+    }
+  };
+
+  return (
+    <section className="call-to-action text-white text-center">
+      <div className="overlay"></div>
+      <div className="container">
+        <div className="row">
+          <div className="col-xl-9 mx-auto">
+            <h2 className="mb-4">Pronto para começar? Faça sua busca!</h2>
+          </div>
+          <div className="col-md-10 col-lg-8 col-xl-7 mx-auto">
+            <div className="form-row">
+              <div className="col-12 col-md-9 mb-2 mb-md-0">
+                <input
+                  ref={input}
+                  onKeyUp={handleKeyUp}
+                  type="text"
+                  className="form-control form-control-lg"
+                  placeholder="Pesquisar por..."
+                />
+              </div>
+              <div className="col-12 col-md-3">
+                <button
+                  onClick={handleSubmit}
+                  type="submit"
+                  className="btn btn-block btn-lg btn-primary"
+                >
+                  Buscar
+                </button>
+              </div>
             </div>
           </div>
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 };
 

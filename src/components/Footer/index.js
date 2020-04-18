@@ -9,19 +9,19 @@ const Footer = () => {
           <div className="col-lg-6 h-100 text-center text-lg-left my-auto">
             <ul className="list-inline mb-2">
               <li className="list-inline-item">
-                <Link to="/">Home</Link>
+                <Link to="/antares">Home</Link>
               </li>
               <li className="list-inline-item">&sdot;</li>
               <li className="list-inline-item">
-                <Link to="terms">Termos de Uso</Link>
+                <Link to="/antares/terms">Termos de Uso</Link>
               </li>
               <li className="list-inline-item">&sdot;</li>
               <li className="list-inline-item">
-                <Link to="privacy">Politicas de Privacidade</Link>
+                <Link to="/antares/privacy">Politicas de Privacidade</Link>
               </li>
               <li className="list-inline-item">&sdot;</li>
               <li className="list-inline-item">
-                <Link to="about">Sobre</Link>
+                <Link to="/antares/about">Sobre</Link>
               </li>
             </ul>
             <p className="text-muted small mb-4 mb-lg-0">

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useParams } from "react-router-dom";
 
 import Header from "../Header";
@@ -13,6 +13,8 @@ function Sentiment() {
   const [isLoading, setLoading] = useState(true);
   const [data, setData] = useState({});
 
+  const ref = useRef(null);
+
   const { text } = useParams();
 
   const fetchResult = async (text) => {
@@ -24,12 +26,20 @@ function Sentiment() {
   };
 
   useEffect(() => {
+    ref.current.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+
+    setLoading(true);
     fetchResult(text);
   }, [text]);
 
   return (
     <>
       <Header text={text} />
+
+      <div ref={ref}></div>
 
       {isLoading ? <Loader /> : <Graph data={data} />}
       {isLoading ? <Loader /> : <Summary data={data} />}
