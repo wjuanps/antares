@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 
 import utils from "../../services/utils";
 
-const Header = ({ text, compare = false }) => {
+const Header = ({ text = {}, compare = false }) => {
   return (
     <header className="masthead text-white text-center">
       <div className="overlay"></div>
@@ -17,7 +17,11 @@ const Header = ({ text, compare = false }) => {
           </div>
           <div className="col-md-10 col-lg-8 col-xl-7 mx-auto">
             <div className="form-row">
-              {compare ? <CompareButton /> : <SentimentButton text={text} />}
+              {compare ? (
+                <CompareButton text={text} />
+              ) : (
+                <SentimentButton text={text} />
+              )}
             </div>
           </div>
         </div>
@@ -74,17 +78,40 @@ const SentimentButton = ({ text }) => {
   );
 };
 
-const CompareButton = () => {
+const CompareButton = ({ text }) => {
   const inputA = useRef(null);
   const inputB = useRef(null);
 
-  const handleSubmit = () => {};
+  const history = useHistory();
+
+  useEffect(() => {
+    if (!!text.a && !!text.b) {
+      inputA.current.value = text.a.replace(/\-+/g, " ");
+      inputB.current.value = text.b.replace(/\-+/g, " ");
+    }
+  }, [text.a, text.b]);
+
+  const handleSubmit = () => {
+    let valueA = utils.slugify(inputA.current.value);
+    let valueB = utils.slugify(inputB.current.value);
+
+    if (!!valueA && !!valueB) {
+      history.push(`/antares/compare/${valueA}/${valueB}`);
+    }
+  };
+
+  const handleKeyUp = ({ keyCode }) => {
+    if (keyCode == 13) {
+      handleSubmit();
+    }
+  };
 
   return (
     <>
       <div className="col-6 col-md-5 mb-2 mb-md-0">
         <input
           ref={inputA}
+          onKeyUp={handleKeyUp}
           type="text"
           className="form-control form-control-lg"
           placeholder="Pesquisar por..."
@@ -94,6 +121,7 @@ const CompareButton = () => {
       <div className="col-6 col-md-5 mb-2 mb-md-0">
         <input
           ref={inputB}
+          onKeyUp={handleKeyUp}
           type="text"
           className="form-control form-control-lg"
           placeholder="Pesquisar por..."
