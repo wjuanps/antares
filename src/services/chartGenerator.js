@@ -20,6 +20,28 @@ const chart = {
       options: chart.options,
     });
   },
+
+  compareChart(ref, chart = {}) {
+    var ctx = ref.getContext("2d");
+    new Chart(ctx, {
+      type: "line",
+      data: {
+        labels: ["", "Positivo", "Negativo"],
+        datasets: chart.datasets,
+        options: {
+          scales: {
+            yAxes: [
+              {
+                ticks: {
+                  beginAtZero: true,
+                },
+              },
+            ],
+          },
+        },
+      },
+    });
+  },
 };
 
 export default chart;
