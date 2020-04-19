@@ -20,8 +20,8 @@ const Routes = () => (
       exact
       component={Sentiment}
     />
-    <Route path="/antares/compare" exact component={Compare} />
     <Route path="/antares/compare/:a/:b" exact component={Compare} />
+    <Route path="/antares/compare" exact component={Compare} />
     <Route path="/antares/*" component={NotFound} />
   </Switch>
 );
