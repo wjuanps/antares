@@ -2,7 +2,15 @@ import React, { useRef, useEffect } from "react";
 
 import chart from "../../../services/chartGenerator";
 
-const Graph = ({ data }) => {
+const Graph = ({ data, compare = false }) => {
+  return compare ? (
+    <CompareGraph data={data} />
+  ) : (
+    <SentimentGraph data={data} />
+  );
+};
+
+const SentimentGraph = ({ data }) => {
   const bar = useRef(null);
   const pie = useRef(null);
 
@@ -69,6 +77,54 @@ const Graph = ({ data }) => {
           </div>
           <div className="col-md-6">
             <canvas ref={pie}></canvas>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const CompareGraph = ({ data }) => {
+  const line = useRef(null);
+
+  useEffect(() => {
+    chart.compareChart(line.current, {
+      datasets: [
+        {
+          label: data.a.text,
+          backgroundColor: "rgba(0, 0, 0, 0)",
+          borderColor: "rgb(255, 99, 132)",
+          data: [
+            0,
+            data.a.result.percentPositive.toFixed(2),
+            data.a.result.percentNegative.toFixed(2),
+          ],
+        },
+        {
+          label: data.b.text,
+          backgroundColor: "rgba(0, 0, 0, 0)",
+          borderColor: "rgb(25, 23, 132)",
+          data: [
+            0,
+            data.b.result.percentPositive.toFixed(2),
+            data.b.result.percentNegative.toFixed(2),
+          ],
+        },
+      ],
+    });
+  }, [line]);
+
+  return (
+    <section className="features-icons bg-light text-center">
+      <div className="container">
+        <h2 className="text-info mb-5">
+          Comparação entre {data.a.text.replace(/\-+/g, " ")} e{" "}
+          {data.b.text.replace(/\-+/g, " ")}
+        </h2>
+
+        <div className="row">
+          <div className="col-md-12">
+            <canvas ref={line}></canvas>
           </div>
         </div>
       </div>
