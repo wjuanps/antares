@@ -24,7 +24,8 @@ const Compare = () => {
   const fetchResult = async (textA, textB) => {
     setError(false);
     try {
-      let response = await api.get(`compare/${textA}/${textB}`);
+      // let response = await api.get(`compare/${textA}/${textB}`);
+      let response = await api.get(`compare?a=${textA}&b=${textB}`);
       let { data } = response;
 
       setData(data);
@@ -62,8 +63,8 @@ const Compare = () => {
       {render ? (
         <Render isLoading={isLoading} error={error} data={data} />
       ) : (
-        <div></div>
-      )}
+          <div></div>
+        )}
     </>
   );
 };
@@ -76,22 +77,22 @@ const Render = ({ isLoading, error, data }) => {
       ) : error ? (
         <Error message="Gráfico" />
       ) : (
-        <Graph data={data} compare={true} />
-      )}
+            <Graph data={data} compare={true} />
+          )}
       {isLoading ? (
         <Loader />
       ) : error ? (
         <Error message="Resumo" />
       ) : (
-        <Summary data={data} compare={true} />
-      )}
+            <Summary data={data} compare={true} />
+          )}
       {isLoading ? (
         <Loader />
       ) : error ? (
         <Error message="Tweets" />
       ) : (
-        <Table data={data} compare={true} />
-      )}
+            <Table data={data} compare={true} />
+          )}
     </div>
   );
 };
