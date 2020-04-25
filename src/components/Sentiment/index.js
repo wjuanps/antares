@@ -22,8 +22,7 @@ function Sentiment() {
   const fetchResult = async (text) => {
     setError(false);
     try {
-      // let response = await api.get(`tweets/${text}`);
-      let response = await api.get(`tweets?q=${text}`);
+      let response = await api.get(`tweets/${text}`);
       let { data } = response;
 
       setData(data);
@@ -57,22 +56,22 @@ function Sentiment() {
       ) : error ? (
         <Error message="Gráfico" />
       ) : (
-            <Graph data={data} />
-          )}
+        <Graph data={data} />
+      )}
       {isLoading ? (
         <Loader />
       ) : error ? (
         <Error message="Resumo" />
       ) : (
-            <Summary data={data} />
-          )}
+        <Summary data={data} />
+      )}
       {isLoading ? (
         <Loader />
       ) : error ? (
         <Error message="Tweets" />
       ) : (
-            <Table data={data} />
-          )}
+        <Table data={data} />
+      )}
     </>
   );
 }
