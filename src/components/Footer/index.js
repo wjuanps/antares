@@ -14,15 +14,15 @@ const Footer = () => {
               </li>
               <li className="list-inline-item">&sdot;</li>
               <li className="list-inline-item">
-                <Link to="/antares/terms">Termos de Uso</Link>
+                <Link to="/terms">Termos de Uso</Link>
               </li>
               <li className="list-inline-item">&sdot;</li>
               <li className="list-inline-item">
-                <Link to="/antares/privacy">Politicas de Privacidade</Link>
+                <Link to="/privacy">Politicas de Privacidade</Link>
               </li>
               <li className="list-inline-item">&sdot;</li>
               <li className="list-inline-item">
-                <Link to="/antares/about">Sobre</Link>
+                <Link to="/about">Sobre</Link>
               </li>
             </ul>
             <p className="text-muted small mb-4 mb-lg-0">

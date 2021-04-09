@@ -2,7 +2,7 @@
   "name": "antares",
   "license": "MIT",
   "version": "0.1.0",
-  "homepage": "https://wjuanps.github.io/antares",
+  "homepage": "https://wjuanps.github.io",
   "private": false,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",

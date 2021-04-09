@@ -25,7 +25,7 @@ const Home = () => {
                 <div className="features-icons-icon d-flex">
                   <Link
                     className=" m-auto text-primary"
-                    to={`/antares/sentiment-analysis/${utils.slugify(
+                    to={`/sentiment-analysis/${utils.slugify(
                       "Samsung note 10 plus"
                     )}`}
                   >
@@ -41,7 +41,7 @@ const Home = () => {
                 <div className="features-icons-icon d-flex">
                   <Link
                     className=" m-auto text-primary"
-                    to={`/antares/sentiment-analysis/${utils.slugify(
+                    to={`/sentiment-analysis/${utils.slugify(
                       "Mi note 10"
                     )}`}
                   >
@@ -57,7 +57,7 @@ const Home = () => {
                 <div className="features-icons-icon d-flex">
                   <Link
                     className=" m-auto text-primary"
-                    to={`/antares/sentiment-analysis/${utils.slugify(
+                    to={`/sentiment-analysis/${utils.slugify(
                       "Iphone 11 pro max"
                     )}`}
                   >
@@ -135,7 +135,7 @@ const Footer = () => {
     let { value } = input.current;
     if (!!value) {
       value = utils.slugify(value);
-      history.push(`/antares/sentiment-analysis/${value}`);
+      history.push(`/sentiment-analysis/${value}`);
     }
   };
 

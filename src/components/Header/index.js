@@ -43,7 +43,7 @@ const SentimentButton = ({ text }) => {
     let { value } = input.current;
     if (!!value) {
       value = utils.slugify(value);
-      history.push(`/antares/sentiment-analysis/${value}`);
+      history.push(`/sentiment-analysis/${value}`);
     }
   };
 
@@ -96,7 +96,7 @@ const CompareButton = ({ text }) => {
     let valueB = utils.slugify(inputB.current.value);
 
     if (!!valueA && !!valueB) {
-      history.push(`/antares/compare/${valueA}/${valueB}`);
+      history.push(`/compare/${valueA}/${valueB}`);
     }
   };
 

@@ -11,18 +11,18 @@ import NotFound from "./components/NotFound";
 
 const Routes = () => (
   <Switch>
-    <Route path="/antares/" exact component={Home} />
-    <Route path="/antares/terms" exact component={Terms} />
-    <Route path="/antares/privacy" exact component={Privacy} />
-    <Route path="/antares/about" exact component={About} />
+    <Route path="/" exact component={Home} />
+    <Route path="/terms" exact component={Terms} />
+    <Route path="/privacy" exact component={Privacy} />
+    <Route path="/about" exact component={About} />
     <Route
-      path="/antares/sentiment-analysis/:text"
+      path="/sentiment-analysis/:text"
       exact
       component={Sentiment}
     />
-    <Route path="/antares/compare/:a/:b" exact component={Compare} />
-    <Route path="/antares/compare" exact component={Compare} />
-    <Route path="/antares/*" component={NotFound} />
+    <Route path="/compare/:a/:b" exact component={Compare} />
+    <Route path="/compare" exact component={Compare} />
+    <Route path="/*" component={NotFound} />
   </Switch>
 );
 
